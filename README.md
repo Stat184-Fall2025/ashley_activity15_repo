@@ -14,11 +14,11 @@ My current plan going into this assignment is to be able to practice using githu
 
 ### Repository Organization
 ashley_activity15_repo:
-> Ashley_Activity14.qmd
-> Ashley_Activty14.pdf
-> README.md
-> PLAN.md
-dev branch and commits used for revisions, pull requests, and other development
+1. Ashley_Activity14.qmd
+2. Ashley_Activty14.pdf
+3. README.md
+4. PLAN.md
+> dev branch and commits used for revisions, pull requests, and other development
 
 ### Contact Information
 Ashley Song
