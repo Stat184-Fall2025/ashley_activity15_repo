@@ -25,7 +25,6 @@ execute:
 The table shows the number of Air Force Officers by sex across each officer rank in the June 2025 Armed Forces dataset. Each row represents an officer rank, and the columns show how many men and women fall into that rank, letting us compare how the distribution of sex changes as rank increases. Because the data were expanded to one row per soldier, the counts reflect actual numbers of individual officers. From the table, men consistently appear in much higher numbers than women across all officer ranks, and the size of the difference varies by rank. Since these proportions are not consistent across the ranks, sex and rank do not appear to be independent for this subgroup of the Air Force.
 
 ```{r armed_forces_table}
-
 #| echo: false
 #| tbl-cap: "Frequency of Sex by Rank among Air Force commissioned officers in the June 2025 Armed Forces data."
 
@@ -144,7 +143,8 @@ airforce_officer_table <- airforce_officers |>
     values_fill = 0
   )
 
-airforce_officer_table
+airforce_officer_table_df <- as.data.frame(airforce_officer_table)
+airforce_officer_table_df
 ```
 
 # Popularity of Baby Names (Activity #13)
@@ -152,7 +152,6 @@ airforce_officer_table
 I chose the names Ashley, Matthew, Paula, and Sean because they represent the people closest to me, my best friends Matthew and Paula, and my twin brother Sean, and included my own name, so I was curious to see how their popularity changed over time. The line graph shows yearly counts of each name from the late 1800s to the early 2000s, with different colors and line styles to make the trends easy to compare. The name Paula peaks around the 1950s before declining, Sean rises and falls a few times throughout the mid-1900s, Matthew grows steadily and peaks around the 1980s, and Ashley rises sharply after the mid-1970s and has the highest overall peak. Overall, the visualization makes it easy to see how each name follows a very different pattern across the decades.
 
 ```{r baby_names_plot}
-
 #| echo: false
 #| fig-cap: "Popularity of Names Ashley, Matthew, Paula, and Sean Over Time."
 #| fig-alt: "Line chart shows the number of babies given the names Ashley, Matthew, Paula, and Sean in the United States each year from 1880 to the early 2000s. Each name is a different colored line so we can easily see the trends of each name."
@@ -211,7 +210,6 @@ baby_plot
 This is the Box Problem, where you take a 36" × 48" sheet of paper, cut out squares of side length x from each corner, and fold up the sides to form an open-top box. The volume depends on how big the cutouts are, so the plot shows how the volume changes as x increases. The curve starts at zero, rises to a single peak, and then drops back down as the cutouts get too large to form a usable box. This visualization makes it easy to see where the maximum happens and how quickly the volume changes based on small differences in the cutout size.
 
 ```{r box_volume_plot}
-
 #| echo: false
 #| fig-cap: "Volume of an open-top box made from a 36\" × 48\" sheet as a function of the cutout side length."
 #| fig-alt: "Curve showing the volume of an open-top box made from a 36 by 48 inch sheet as a function of cutout side length. The volume rises from zero, peaks around x ≈ 6.8 inches, and then falls back toward zero."
@@ -272,7 +270,6 @@ Below is the code used to generate all results in this document.
 ## Armed Forces Data Wrangling Code
 
 ```{r armed_forces_wrangle}
-
 #| echo: true
 
 # import packages
@@ -390,13 +387,13 @@ airforce_officer_table <- airforce_officers |>
     values_fill = 0
   )
 
-airforce_officer_table
+airforce_officer_table_df <- as.data.frame(airforce_officer_table)
+airforce_officer_table_df
 ```
 
 ## Popularity of Baby Names Code
 
 ```{r baby_names_code}
-
 #| echo: true
 
 # load packages
@@ -451,7 +448,6 @@ baby_plot
 ## Box Problem Code
 
 ```{r box_problem_code}
-
 #| echo: true
 
 # load packages
